@@ -1,0 +1,31 @@
+<h1>Itens</h1>
+
+<table class = "table .table-responsive">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Quantidade</th>
+      <th>Preço</th>
+      <th>Descrição</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @itens.each do |item| %>
+      <tr>
+        <td><%= item.nm_item %></td>
+        <td><%= item.qtd_item %></td>
+        <td><%= item.vl_item %></td>
+        <td><%= item.ds_item %></td>
+        <td><%= link_to 'Exibir', item %></td>
+        <td><%= link_to 'Editar', edit_item_path(item) %></td>
+        <td><%= link_to 'Remover', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Novo Item', new_item_path %>

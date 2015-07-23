@@ -1,0 +1,42 @@
+<h1>Clientes</h1>
+
+<div class = "table-responsive">
+<table class = "table">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Telefeone</th>
+      <th>CEP</th>
+      <th>Endereço</th>
+      <th>Número Endereço</th>
+      <th>Complemento</th>
+      <th>Bairro</th>
+      <th>Cidade</th>
+      <th>UF</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @clientes.each do |cliente| %>
+      <tr>
+        <td><%= cliente.nm_cliente %></td>
+        <td><%= cliente.num_tel_cliente %></td>
+        <td><%= cliente.cep %></td>
+        <td><%= cliente.nm_endereco_cliente %></td>
+        <td><%= cliente.num_endereco %></td>
+        <td><%= cliente.nm_complemento %></td>
+        <td><%= cliente.nm_bairro %></td>
+        <td><%= cliente.nm_cidade %></td>
+        <td><%= cliente.nm_uf %></td>
+        <td><%= link_to 'Exibir', cliente %></td>
+        <td><%= link_to 'Editar', edit_cliente_path(cliente) %></td>
+        <td><%= link_to 'Remover', cliente, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<br>
+
+<%= link_to 'Novo Cliente', new_cliente_path %>

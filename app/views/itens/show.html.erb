@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @item.nm_item %>
+</p>
+
+<p>
+  <strong>Quantidade:</strong>
+  <%= @item.qtd_item %>
+</p>
+
+<p>
+  <strong>Valor:</strong>
+  <%= @item.vl_item %>
+</p>
+
+<p>
+  <strong>Descrição Item:</strong>
+  <%= @item.ds_item %>
+</p>
+
+<%= link_to 'Editar', edit_item_path(@item) %> |
+<%= link_to 'Voltar', itens_path %>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nm_item: MyString
+  qtd_item: 1.5
+  vl_item: 1.5
+  ds_item: MyText
+
+two:
+  nm_item: MyString
+  qtd_item: 1.5
+  vl_item: 1.5
+  ds_item: MyText

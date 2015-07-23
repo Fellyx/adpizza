@@ -1,0 +1,53 @@
+<%= form_for(@cliente) do |f| %>
+  <% if @cliente.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cliente.errors.count, "error") %> prohibited this cliente from being saved:</h2>
+
+      <ul>
+      <% @cliente.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Nome Do Cliente" %><br>
+    <%= f.text_field :nm_cliente %>
+  </div>
+  <div class="field">
+    <%= f.label "Telefone Cliente" %><br>
+    <%= f.number_field :num_tel_cliente %>
+  </div>
+  <div class="field">
+    <%= f.label "CEP" %><br>
+    <%= f.text_field :cep, maxlenght: '8' %>
+  </div>
+  <div class="field">
+    <%= f.label "Endereço Cliente" %><br>
+    <%= f.text_field :nm_endereco_cliente %>
+  </div>
+  <div class="field">
+    <%= f.label "Número Endereço" %><br>
+    <%= f.number_field :num_endereco %>
+  </div>
+  <div class="field">
+    <%= f.label "Complemento" %><br>
+    <%= f.text_field :nm_complemento %>
+  </div>
+  <div class="field">
+    <%= f.label "Bairro" %><br>
+    <%= f.text_field :nm_bairro %>
+  </div>
+  <div class="field">
+    <%= f.label "Cidade" %><br>
+    <%= f.text_field :nm_cidade %>
+  </div>
+  <div class="field">
+    <%= f.label "UF" %><br>
+    <%= f.text_field :nm_uf %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Criar Cliente"%>
+  </div>
+<% end %>

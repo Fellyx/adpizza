@@ -1,0 +1,39 @@
+    <table class="table .table-responsive" id="tabela-itens-pedido">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Preço Item</th>
+          <th>Quantidade</th>
+          <th>Preço Total</th>
+          <th><input type ="button" value ="Adicionar" onclick="adicionarlinhatabela(this)"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td class="item">
+            <select name="" id="item" onChange="pegarvaloritem(this)">
+              <option value=""></option>
+              <% @items_para_pedido.each do |item|%>
+                    <option value = "<%= item.id %>"><%= item.nm_item %></option>                   
+                  <% end %>
+              </select>
+              <% @items_para_pedido.each do |item|%>
+                <input type="hidden" id="vl_item_<%= item.id %>" value="<%= item.vl_item %>">
+              <input type="hidden" id="qtd_item_<%= item.id %>" value="<%= item.qtd_item %>">
+            <% end %>
+          </td>
+          <td class="preco_item_atual">
+            <input type = "text" id = "preco_item_atual"  readonly = "readonly" value="">
+          </td>
+          <td class = "qtd_item">
+            <input type = "number" id = "qtd_item" onkeyup="calcularprecoitem(this)" value="">
+          </td>
+          <td class = "vl_item_pedido">
+            <input type = "text" id = "vl_item_pedido" readonly="readonly" value="">
+          </td>
+          <td>            
+          </td>
+        </tr>
+      </tbody>
+    </table>

@@ -1,0 +1,39 @@
+<%= form_for(@pedido) do |f| %>
+  <% if @pedido.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pedido.errors.count, "error") %> prohibited this pedido from being saved:</h2>
+
+      <ul>
+      <% @pedido.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Cliente" %><br>    
+    <select name="pedido[cliente_id]">
+        <% @clientes_pedidos.each do |cliente| %>
+          <option value="<%= cliente.id %>"><%= cliente.nm_cliente %></option>
+        <% end %>
+    </select>    
+  </div>
+  <div class="field">
+    <%= f.label "Data" %><br>
+    <%= f.date_select :dt_pedido %>
+  </div>
+  <div class="field">
+    <%= render 'tabela_itens_pedido' %>
+  </div>  
+  <div class="field">
+    <p>
+      <input type="button" value="Guardar Itens" id = "pegar_itens" onClick="cadastrar_itens()">
+    </p>
+    <%= f.label "Valor Total" %><br>
+    <%= f.text_field :vl_total, readonly: 'readonly' %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Gerar Pedido", style: 'display:none', id: 'guardar_pedido'  %>
+  </div>
+<% end %>

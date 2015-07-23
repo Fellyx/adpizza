@@ -1,0 +1,22 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nm_cliente: MyString
+  num_tel_cliente: 1
+  nm_endereco_cliente: MyString
+  num_endereco: 1
+  nm_complemento: MyString
+  nm_bairro: MyString
+  nm_cidade: MyString
+  nm_uf: 
+  cep: 1
+two:
+  nm_cliente: MyString
+  num_tel_cliente: 1
+  nm_endereco_cliente: MyString
+  num_endereco: 1
+  nm_complemento: MyString
+  nm_bairro: MyString
+  nm_cidade: MyString
+  nm_uf: 
+  cep: 1
