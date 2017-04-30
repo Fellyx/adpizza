@@ -1,6 +1,10 @@
 == README
 
+Projeto Antigo, de uma olhada nos meu projetos mais recentes:
+
+blog3v
+schooladm
+
 Esse projeto é um simples sistema de gerenciamento de pizzaria.
 
-
-	
+Project created only for my study purposes.
